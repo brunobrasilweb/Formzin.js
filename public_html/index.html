@@ -1,0 +1,211 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formzin</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/formzin.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Formzin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Formzin</h1>
+                <p>Plugin do Jquery para facilitar o tratamento de formulários.</p>
+                <p><a class="btn btn-primary btn-lg" href="js/formzin.js" target="_blank" role="button">Baixar o Plugin</a></p>
+                <p><a class="btn btn-primary btn-lg" href="js/formzin.min.js" target="_blank" role="button">Baixar o Plugin (min)</a></p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Formatação</h2>
+                    <p>Formatação de campos colocando apenas o nome da classe no campo do formulário com diversos tipos de formatações e mascaras.</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Validação</h2>
+                    <p>Validação de formulários em tempo real com diversas tipos de vaslidações cpf, cnpj, email, telefone, cartão de créditos e muito mais...</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Manipulação</h2>
+                    <p>Munipulação de campos nos formulários sem a necessidade de códigos javascript para realizar manuputações no formulário.</p>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <h1>Formatação</h1>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#demo-formatacao" data-toggle="tab">DEMO</a></li>
+                    <li><a href="#html-formatacao" data-toggle="tab">HTML</a></li>
+                </ul>
+                <div class="tab-content" style="padding: 10px;">
+                    <div class="tab-pane active" id="demo-formatacao">
+                        <form>
+                            <div class="form-group">
+                                <label for="cpf">CPF</label>
+                                <input type="text" class="form-control cpf" id="cpf" />
+                            </div>
+                            <div class="form-group">
+                                <label for="cnpj">CNPJ</label>
+                                <input type="text" class="form-control cnpj" id="cnpj" />
+                            </div>
+                            <div class="form-group">
+                                <label for="data_ptbr">Data (PT_BR)</label>
+                                <input type="text" class="form-control data" id="data_ptbr" />
+                            </div>
+                            <div class="form-group">
+                                <label for="cep">CEP</label>
+                                <input type="text" class="form-control cep" id="cep" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inteiro">Inteiros</label>
+                                <input type="text" class="form-control inteiro" id="inteiro" />
+                            </div>
+                            <div class="form-group">
+                                <label for="moeda">Moeda (Padrao é o Real)</label>
+                                <input type="text" class="form-control moeda" prefixo="R$ " decimal="," id="moeda" />
+                            </div>
+                            <div class="form-group">
+                                <label for="moeda">Moeda (Dolar com decimal 4)</label>
+                                <input type="text" class="form-control moeda" prefixo="$ " decimal="." limite_decimal="4" milhar="," id="moeda" />
+                            </div>
+                            <div class="form-group">
+                                <label for="placa_carro">CAIXA ALTA</label>
+                                <input type="text" class="form-control caixa_alta" id="caixa_alta" />
+                            </div>
+                            <div class="form-group">
+                                <label for="placa_carro">Mascara Personalizada</label>
+                                <input type="text" class="form-control mascara" formato="000.000" id="caixa_alta" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="html-formatacao">
+                        <p>Formatar <b>CPF</b> (class="cpf")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cpf"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>CNPJ</b> (class="cnpj")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cnpj"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>Data (PT_BR)</b> (class="data")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"data"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>Data (PT_BR)</b> (separador="-") 99-99-9999</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"data"</span><span style='color:#274796; '> separador</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"-"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>CEP</b> (class="cep")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cep"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>Número inteiros</b> (class="inteiro")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"inteiro"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>Moeda (Padrao é o Real)</b> (class="moeda") com opções: decimal="," prefixo="R$ "</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"moeda"</span><span style='color:#274796; '> prefixo</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"R$ "</span><span style='color:#274796; '> decimal</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>","</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>Moeda (Dolar com decimal 4)</b> (class="moeda") com opções: decimal="." prefixo="$ " limite_decimal="4", milhar=","</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"moeda"</span><span style='color:#274796; '> prefixo</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"$ "</span><span style='color:#274796; '> decimal</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"."</span><span style='color:#274796; '> limite_decimal</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"4"</span><span style='color:#274796; '> milhar</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>","</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>CAIXA ALTA</b> (class="caixa_alta")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"caixa_alta"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>MASCARA</b> (class="mascara" formato="000.000")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"mascara"</span><span style='color:#274796; '> formato</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"000.000"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                    </div>
+                </div> 
+            </div>
+            <div class="row">
+                <h1>Validação</h1>
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#demo-validacao" data-toggle="tab">DEMO</a></li>
+                    <li><a href="#html-validacao" data-toggle="tab">HTML</a></li>
+                </ul>
+                <div class="tab-content" style="padding: 10px;">
+                    <div class="tab-pane active" id="demo-validacao">
+                        <form>
+                            <div class="form-group">
+                                <label for="cpf">Campo Normal</label>
+                                <input type="text" class="form-control validar-campo" minlength="2"  maxlength="10" id="campo-1" msn_validacao="Preencha esse campo." />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cpf">CPF</label>
+                                <input type="text" class="form-control cpf validar-cpf" id="cpf" msn_validacao="Preencha o cpf corretamente." />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cnpj">CNPJ</label>
+                                <input type="text" class="form-control cnpj validar-cnpj" id="cnpj" msn_validacao="Preencha o cnpj corretamente." />
+                            </div>
+                            <div class="form-group">
+                                <label for="data">Data</label>
+                                <input type="text" class="form-control data validar-data" id="data" msn_validacao="Preencha a data corretamente." />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="html-validacao">
+                        <p>Formatar <b>CEP</b> (class="buscar_endereco")</p>
+                        Os atributo (prefixo) para colocar o prefixo do campo, para ser usado com diversos endereço. Ex: endereço de entrega e cobrança em Loja Virtual
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> prefixo</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"buscar_endereco"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <pre>ENDEREÇO <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_logradouro"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
+BAIRRO <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_bairro"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
+CIDADE <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_cidade"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
+UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_uf"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                    </div>
+                </div> 
+            </div>
+            <div class="row">
+                <h1>Manipulação</h1>
+
+                <h4>Busca de endereço com CEP</h4>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#demo-busca-cep" data-toggle="tab">DEMO</a></li>
+                    <li><a href="#html-busca-cep" data-toggle="tab">HTML</a></li>
+                </ul>
+                <div class="tab-content" style="padding: 10px;">
+                    <div class="tab-pane active" id="demo-busca-cep">
+                        <form>
+                            <div class="form-group">
+                                <label for="cep">CEP</label>
+                                <input type="text" prefixo="en_" class="form-control buscar_endereco cep" id="cep" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inteiro">Endereço</label>
+                                <input type="text" class="form-control en_logradouro" />
+                            </div>
+                            <div class="form-group">
+                                <label for="moeda">Bairro</label>
+                                <input type="text" class="form-control en_bairro" />
+                            </div>
+                            <div class="form-group">
+                                <label for="moeda">Cidade</label>
+                                <input type="text" class="form-control en_cidade" />
+                            </div>
+                            <div class="form-group">
+                                <label for="moeda">UF</label>
+                                <input type="text" class="form-control en_uf" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="html-busca-cep">
+                        <p>Formatar <b>CEP</b> (class="buscar_endereco")</p>
+                        Os atributo (prefixo) para colocar o prefixo do campo, para ser usado com diversos endereço. Ex: endereço de entrega e cobrança em Loja Virtual
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> prefixo</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"buscar_endereco"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <pre>ENDEREÇO <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_logradouro"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
+BAIRRO <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_bairro"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
+CIDADE <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_cidade"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
+UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_uf"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                    </div>
+                </div> 
+            </div>
+            <hr />
+            <footer>
+                <p>&copy; - Formzin 2013 - 2014. Por <a href="http://twitter.com/brunobrasilweb" target="_blank">@brunobrasilweb</a></p>
+            </footer>
+        </div> <!-- /container -->
+    </body>
+</html>
