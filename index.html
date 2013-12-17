@@ -13,20 +13,12 @@ and open the template in the editor.
         <script src="js/formzin.js" type="text/javascript"></script>
     </head>
     <body>
-        <div class="navbar navbar-inverse" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Formzin</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="jumbotron">
+        <div class="jumbotron" style="background: #eee url('images/bg.png') right top no-repeat;">
             <div class="container">
                 <h1>Formzin</h1>
                 <p>Plugin do Jquery para facilitar o tratamento de formulários.</p>
-                <p><a class="btn btn-primary btn-lg" href="js/formzin.js" target="_blank" role="button">Baixar o Plugin</a></p>
-                <p><a class="btn btn-primary btn-lg" href="js/formzin.min.js" target="_blank" role="button">Baixar o Plugin (min)</a></p>
+                <p><a class="btn btn-primary btn-lg" href="js/formzin.js" target="_blank" role="button">Baixar o Plugin (0.1)</a></p>
+                <p><a class="btn btn-primary btn-lg" href="js/formzin.min.js" target="_blank" role="button">Baixar o Plugin (0.1) min</a></p>
             </div>
         </div>
 
@@ -38,14 +30,24 @@ and open the template in the editor.
                 </div>
                 <div class="col-md-4">
                     <h2>Validação</h2>
-                    <p>Validação de formulários em tempo real com diversas tipos de vaslidações cpf, cnpj, email, telefone, cartão de créditos e muito mais...</p>
+                    <p>Validação de formulários em tempo real com diversas tipos de vaslidações.</p>
                 </div>
                 <div class="col-md-4">
                     <h2>Manipulação</h2>
-                    <p>Munipulação de campos nos formulários sem a necessidade de códigos javascript para realizar manuputações no formulário.</p>
+                    <p>Munipulação de campos nos formulários sem a necessidade de códigos javascript para realizar manipulações no formulário.</p>
                 </div>
             </div>
             <hr />
+            <div class="row">
+                <h1>Como Utilizar</h1>
+                <p>Para utilizar basta chamar o arquivo .js do plugin:</p>
+                <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script src="jquery.min.js" type="text/javascript"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script src="formzin.min.js" type="text/javascript"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></pre>
+                <p>Para chamar o plugin em lightbox, dialog, ajax e etc:</p>
+                <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script type="text/javascript"</span><span style='color:#a65700; '>></span>
+    Formzin<span style='color:#808030; '>.</span>iniciar<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>                    
+<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></pre>
+            </div>
             <div class="row">
                 <h1>Formatação</h1>
                 <ul class="nav nav-tabs">
@@ -84,12 +86,20 @@ and open the template in the editor.
                                 <input type="text" class="form-control moeda" prefixo="$ " decimal="." limite_decimal="4" milhar="," id="moeda" />
                             </div>
                             <div class="form-group">
-                                <label for="placa_carro">CAIXA ALTA</label>
+                                <label for="caixa_alta">CAIXA ALTA</label>
                                 <input type="text" class="form-control caixa_alta" id="caixa_alta" />
                             </div>
                             <div class="form-group">
-                                <label for="placa_carro">Mascara Personalizada</label>
-                                <input type="text" class="form-control mascara" formato="000.000" id="caixa_alta" />
+                                <label for="telefone">Telefone</label>
+                                <input type="text" class="form-control telefone" id="telefone" />
+                            </div>
+                            <div class="form-group">
+                                <label for="cartao">Cartão de Crédito</label>
+                                <input type="text" class="form-control cartao_credito" id="cartao" />
+                            </div>
+                            <div class="form-group">
+                                <label for="mascara">Mascara Personalizada (000.000)</label>
+                                <input type="text" class="form-control mascara" formato="000.000" id="mascara" />
                             </div>
                         </form>
                     </div>
@@ -112,6 +122,10 @@ and open the template in the editor.
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"moeda"</span><span style='color:#274796; '> prefixo</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"$ "</span><span style='color:#274796; '> decimal</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"."</span><span style='color:#274796; '> limite_decimal</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"4"</span><span style='color:#274796; '> milhar</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>","</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                         <p>Formatar <b>CAIXA ALTA</b> (class="caixa_alta")</p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"caixa_alta"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>TELEFONE</b> (class="telefone")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"telefone"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>CARTÃO DE CRÉDITO</b> (class="cartao_credito")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cartao_credito"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                         <p>Formatar <b>MASCARA</b> (class="mascara" formato="000.000")</p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"mascara"</span><span style='color:#274796; '> formato</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"000.000"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                     </div>
@@ -131,12 +145,12 @@ and open the template in the editor.
                                 <label for="cpf">Campo Normal</label>
                                 <input type="text" class="form-control validar-campo" minlength="2"  maxlength="10" id="campo-1" msn_validacao="Preencha esse campo." />
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="cpf">CPF</label>
                                 <input type="text" class="form-control cpf validar-cpf" id="cpf" msn_validacao="Preencha o cpf corretamente." />
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="cnpj">CNPJ</label>
                                 <input type="text" class="form-control cnpj validar-cnpj" id="cnpj" msn_validacao="Preencha o cnpj corretamente." />
@@ -148,13 +162,14 @@ and open the template in the editor.
                         </form>
                     </div>
                     <div class="tab-pane" id="html-validacao">
-                        <p>Formatar <b>CEP</b> (class="buscar_endereco")</p>
-                        Os atributo (prefixo) para colocar o prefixo do campo, para ser usado com diversos endereço. Ex: endereço de entrega e cobrança em Loja Virtual
-                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> prefixo</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"buscar_endereco"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
-                        <pre>ENDEREÇO <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_logradouro"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
-BAIRRO <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_bairro"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
-CIDADE <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_cidade"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
-UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_uf"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Validar <b>CAMPO NORMAL</b> (class="validar-campo") Opcional: minlength="2", maxlength="10" e msn_validacao="Preencha esse campo." </p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"validar-campo"</span><span style='color:#274796; '> minlength</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"2"</span><span style='color:#274796; '>  </span><span style='color:#074726; '>maxlength</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"10"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"campo-1"</span><span style='color:#274796; '> msn_validacao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Preencha esse campo."</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Validar <b>CPF</b> (class="validar-cpf") Opcional: msn_validacao="Preencha o cpf corretamente." </p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"validar-cpf"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cpf"</span><span style='color:#274796; '> msn_validacao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Preencha o cpf corretamente."</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Validar <b>CNPJ</b> (class="validar-cnpj") Opcional: msn_validacao="Preencha o cnpj corretamente." </p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"validar-cnpj"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cnpj"</span><span style='color:#274796; '> msn_validacao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Preencha o cnpj corretamente."</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Validar <b>DATA</b> (class="validar-data") Opcional: msn_validacao="Preencha a data corretamente." </p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"validar-data"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"data"</span><span style='color:#274796; '> msn_validacao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Preencha a data corretamente."</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                     </div>
                 </div> 
             </div>
@@ -202,9 +217,18 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
                     </div>
                 </div> 
             </div>
+            <div class="row">
+                <b>Ajude a tomar um cafezinho e continuar melhorando o plugin com novos recursos.</b><br><br>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="ZG3CK6CNJ4YMS">
+                    <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira mais fácil e segura de efetuar pagamentos online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>
             <hr />
             <footer>
-                <p>&copy; - Formzin 2013 - 2014. Por <a href="http://twitter.com/brunobrasilweb" target="_blank">@brunobrasilweb</a></p>
+                <p>&copy; Formzin 2013. Por <a href="http://twitter.com/brunobrasilweb" target="_blank">@brunobrasilweb</a></p>
             </footer>
         </div> <!-- /container -->
     </body>
