@@ -1,6 +1,6 @@
 /* ========================================================================
  * Formzin: formzin.js v0.1
- * http://formzin.com
+ * http://brunobrasilweb.github.io/Formzin.js
  * ========================================================================
  * Copyright (c) 2013 @brunobrasilweb.
  *
