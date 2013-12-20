@@ -36,8 +36,8 @@ and open the template in the editor.
             <div class="container">
                 <h1>Formzin</h1>
                 <p>Plugin do Jquery para facilitar o tratamento de formulários.</p>
-                <p><a class="btn btn-primary btn-lg" href="js/formzin.js" target="_blank" role="button">Baixar o Plugin (0.1)</a></p>
-                <p><a class="btn btn-primary btn-lg" href="js/formzin.min.js" target="_blank" role="button">Baixar o Plugin (0.1) min</a></p>
+                <p><a class="btn btn-primary btn-lg" href="js/formzin.js" target="_blank" role="button">Baixar o Plugin Versão 0.2</a></p>
+                <p><a class="btn btn-primary btn-lg" href="js/formzin.min.js" target="_blank" role="button">Baixar o Plugin Versão 0.2 (min)</a></p>
                 <div style="width: 100%; height: 30px;">
                     <span style="padding: 5px;" class='st_facebook_hcount' displayText='Facebook'></span>
                     <span class='st_twitter_hcount' displayText='Tweet'></span>
@@ -62,7 +62,7 @@ and open the template in the editor.
                 </div>
                 <div class="col-md-4">
                     <h2>Manipulação</h2>
-                    <p>Munipulação de campos nos formulários sem a necessidade de códigos javascript para realizar manipulações no formulário.</p>
+                    <p>Manipulação de campos nos formulários sem a necessidade de códigos javascript.</p>
                 </div>
             </div>
             <hr />
@@ -129,6 +129,14 @@ and open the template in the editor.
                                 <label for="mascara">Mascara Personalizada (000.000)</label>
                                 <input type="text" class="form-control mascara" formato="000.000" id="mascara" />
                             </div>
+                            <div class="form-group">
+                                <label for="placa_carro">Placa de Carro</label> <span style='color:red;'>NOVO</span>
+                                <input type="text" class="form-control placa_carro caixa_alta" id="placa_carro" />
+                            </div>
+                            <div class="form-group">
+                                <label for="codigo_rastreio">Códido de Ratreio dos Correios</label> <span style='color:red;'>NOVO</span>
+                                <input type="text" class="form-control codigo_rastreio caixa_alta" id="codigo_rastreio" />
+                            </div>
                         </form>
                     </div>
                     <div class="tab-pane" id="html-formatacao">
@@ -156,6 +164,10 @@ and open the template in the editor.
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cartao_credito"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                         <p>Formatar <b>MASCARA</b> (class="mascara" formato="000.000")</p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"mascara"</span><span style='color:#274796; '> formato</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"000.000"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>PLACA DE CARRO</b> (class="placa_carro")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"plca_carro"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Formatar <b>CÓDIGO RASTREIO CORREIOS</b> (class="codio_rastreio")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"codigo_rastreio"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                     </div>
                 </div> 
             </div>
@@ -175,6 +187,16 @@ and open the template in the editor.
                             </div>
 
                             <div class="form-group">
+                                <label for="cpf">E-mail</label> <span style='color:red;'>NOVO</span>
+                                <input type="text" class="form-control validar-email" id="email" msn_validacao="Preencha um e-mail válido." />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cpf">URL</label> <span style='color:red;'>NOVO</span>
+                                <input type="text" class="form-control validar-url" id="url" msn_validacao="Preencha uma url válida." />
+                            </div>
+                            
+                            <div class="form-group">
                                 <label for="cpf">CPF</label>
                                 <input type="text" class="form-control cpf validar-cpf" id="cpf" msn_validacao="Preencha o cpf corretamente." />
                             </div>
@@ -192,6 +214,10 @@ and open the template in the editor.
                     <div class="tab-pane" id="html-validacao">
                         <p>Validar <b>CAMPO NORMAL</b> (class="validar-campo") Opcional: minlength="2", maxlength="10" e msn_validacao="Preencha esse campo." </p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"validar-campo"</span><span style='color:#274796; '> minlength</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"2"</span><span style='color:#274796; '>  </span><span style='color:#074726; '>maxlength</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"10"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"campo-1"</span><span style='color:#274796; '> msn_validacao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Preencha esse campo."</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Validar <b>E-MAIL</b> (class="validar-email") Opcional: msn_validacao="Preencha um e-mail válido." </p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"validar-email"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"email"</span><span style='color:#274796; '> msn_validacao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Preencha o e-mail corretamente."</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Validar <b>URL</b> (class="validar-url") Opcional: msn_validacao="Preencha uma url válida." </p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"validar-url"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"url"</span><span style='color:#274796; '> msn_validacao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Preencha a url corretamente."</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                         <p>Validar <b>CPF</b> (class="validar-cpf") Opcional: msn_validacao="Preencha o cpf corretamente." </p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"validar-cpf"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cpf"</span><span style='color:#274796; '> msn_validacao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Preencha o cpf corretamente."</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                         <p>Validar <b>CNPJ</b> (class="validar-cnpj") Opcional: msn_validacao="Preencha o cnpj corretamente." </p>
@@ -254,6 +280,25 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
                     <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
                 </form>
             </div>
+            <hr />
+            <div class="row">
+                <h4>Versões</h4>
+                <b>Versão 0.2 - 20/12/2013</b>
+                <ol>
+                    <li>Melhoria e correção na validação de data.</li>
+                    <li>Validação de e-mail. <b style="color: green;">NOVO</b></li>
+                    <li>Validação de url. <b style="color: green;">NOVO</b></li>
+                    <li>Otimização do plugin para ficar mais leve.</li>
+                    <li>Correções nos acentos das mensagens de validações.</li>
+                    <li>Melhoria e correções de bugs em formatações (mascaras).</li>
+                    <li>Formatação de placa de carro. <b style="color: green;">NOVO</b></li>
+                    <li>Formatação de código de rastreio dos Correios. <b style="color: green;">NOVO</b></li>
+                </ol>
+                <b>Versão 0.1 - 18/12/2013</b>
+                <ol>
+                    <li>Lançamento do plugin</li>
+                </ol>
+            </div>    
             <hr />
             <footer>
                 <p>&copy; Formzin 2013. Por <a href="http://twitter.com/brunobrasilweb" target="_blank">@brunobrasilweb</a></p>
