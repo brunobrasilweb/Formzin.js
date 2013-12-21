@@ -44,7 +44,7 @@ var Formzin = {
     },
     formatar: function(obj, formato) {
         obj.val(Formzin.formatarCampo(obj, formato));
-        
+
         if (formato == "caixa_alta")
             jQuery('.caixa_alta').attr("style", "text-transform: uppercase;");
 
@@ -194,54 +194,59 @@ var Formzin = {
         }
     },
     formatarCampo: function(obj, mask, skipMaskChars) {
-        var trans = {
-            '0': {pattern: /\d/},
-            'A': {pattern: /[a-zA-Z0-9]/},
-            'S': {pattern: /[a-zA-Z]/}
-        };
+        if (obj.val()) {
+            var trans = {
+                '0': {pattern: /\d/},
+                'A': {pattern: /[a-zA-Z0-9]/},
+                'S': {pattern: /[a-zA-Z]/}
+            };
 
-        var buf = [],
-                value = obj.val(),
-                m = 0, maskLen = mask.length,
-                v = 0, valLen = value.length,
-                offset = 1, addMethod = "push",
-                lastMaskChar,
-                check;
+            var buf = [],
+                    value = obj.val(),
+                    m = 0, maskLen = mask.length,
+                    v = 0, valLen = value.length,
+                    offset = 1, addMethod = "push",
+                    lastMaskChar,
+                    check;
 
-        lastMaskChar = maskLen - 1;
-        check = function() {
-            return m < maskLen && v < valLen;
-        };
+            lastMaskChar = maskLen - 1;
+            check = function() {
+                return m < maskLen && v < valLen;
+            };
 
-        while (check()) {
+            while (check()) {
 
-            var maskDigit = mask.charAt(m),
-                    valDigit = value.charAt(v),
-                    translation = trans[maskDigit];
+                var maskDigit = mask.charAt(m),
+                        valDigit = value.charAt(v),
+                        translation = trans[maskDigit];
 
-            if (translation) {
-                if (valDigit.match(translation.pattern)) {
-                    buf[addMethod](valDigit);
-                    m += offset;
-                } else if (translation.optional) {
-                    m += offset;
-                    v -= offset;
-                }
-                v += offset;
-            } else {
-                if (skipMaskChars === undefined) {
-                    buf[addMethod](maskDigit);
-                }
-
-                if (valDigit === maskDigit) {
+                if (translation) {
+                    if (valDigit.match(translation.pattern)) {
+                        buf[addMethod](valDigit);
+                        m += offset;
+                    } else if (translation.optional) {
+                        m += offset;
+                        v -= offset;
+                    }
                     v += offset;
-                }
+                } else {
+                    if (skipMaskChars === undefined) {
+                        buf[addMethod](maskDigit);
+                    }
 
-                m += offset;
+                    if (valDigit === maskDigit) {
+                        v += offset;
+                    }
+
+                    m += offset;
+                }
             }
+
+            return buf.join("");
+        } else {
+            return "";
         }
-        
-        return buf.join("");
+
     },
     validarEmail: function(email) {
         var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
