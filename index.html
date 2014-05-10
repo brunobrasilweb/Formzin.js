@@ -36,8 +36,8 @@ and open the template in the editor.
             <div class="container">
                 <h1>Formzin</h1>
                 <p>Plugin do Jquery para facilitar o tratamento de formulários.</p>
-                <p><a class="btn btn-primary btn-lg" href="js/formzin.js" target="_blank" role="button">Baixar o Plugin Versão 0.2</a></p>
-                <p><a class="btn btn-primary btn-lg" href="js/formzin.min.js" target="_blank" role="button">Baixar o Plugin Versão 0.2 (min)</a></p>
+                <p><a class="btn btn-primary btn-lg" href="js/formzin.js" target="_blank" role="button">Baixar o Plugin Versão 0.13</a></p>
+                <p><a class="btn btn-primary btn-lg" href="js/formzin.min.js" target="_blank" role="button">Baixar o Plugin Versão 0.13 (min)</a></p>
                 <div style="width: 100%; height: 30px;">
                     <span style="padding: 5px;" class='st_facebook_hcount' displayText='Facebook'></span>
                     <span class='st_twitter_hcount' displayText='Tweet'></span>
@@ -58,7 +58,7 @@ and open the template in the editor.
                 </div>
                 <div class="col-md-4">
                     <h2>Validação</h2>
-                    <p>Validação de formulários em tempo real com diversas tipos de vaslidações.</p>
+                    <p>Validação de formulários em tempo real com diversos tipos de validações.</p>
                 </div>
                 <div class="col-md-4">
                     <h2>Manipulação</h2>
@@ -113,7 +113,7 @@ and open the template in the editor.
                                 <label for="moeda">Moeda (Dolar com decimal 4)</label>
                                 <input type="text" class="form-control moeda" prefixo="$ " decimal="." limite_decimal="4" milhar="," id="moeda" />
                             </div>
-                            <div class="form-group">
+                            <div class="form-group"> 
                                 <label for="caixa_alta">CAIXA ALTA</label>
                                 <input type="text" class="form-control caixa_alta" id="caixa_alta" />
                             </div>
@@ -130,11 +130,11 @@ and open the template in the editor.
                                 <input type="text" class="form-control mascara" formato="000.000" id="mascara" />
                             </div>
                             <div class="form-group">
-                                <label for="placa_carro">Placa de Carro</label> <span style='color:red;'>NOVO</span>
+                                <label for="placa_carro">Placa de Carro</label>
                                 <input type="text" class="form-control placa_carro caixa_alta" id="placa_carro" />
                             </div>
                             <div class="form-group">
-                                <label for="codigo_rastreio">Códido de Ratreio dos Correios</label> <span style='color:red;'>NOVO</span>
+                                <label for="codigo_rastreio">Códido de Ratreio dos Correios</label>
                                 <input type="text" class="form-control codigo_rastreio caixa_alta" id="codigo_rastreio" />
                             </div>
                         </form>
@@ -165,7 +165,7 @@ and open the template in the editor.
                         <p>Formatar <b>MASCARA</b> (class="mascara" formato="000.000")</p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"mascara"</span><span style='color:#274796; '> formato</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"000.000"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                         <p>Formatar <b>PLACA DE CARRO</b> (class="placa_carro")</p>
-                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"plca_carro"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"placa_carro"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                         <p>Formatar <b>CÓDIGO RASTREIO CORREIOS</b> (class="codio_rastreio")</p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"codigo_rastreio"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                     </div>
@@ -187,12 +187,12 @@ and open the template in the editor.
                             </div>
 
                             <div class="form-group">
-                                <label for="cpf">E-mail</label> <span style='color:red;'>NOVO</span>
+                                <label for="cpf">E-mail</label>
                                 <input type="text" class="form-control validar-email" id="email" msn_validacao="Preencha um e-mail válido." />
                             </div>
                             
                             <div class="form-group">
-                                <label for="cpf">URL</label> <span style='color:red;'>NOVO</span>
+                                <label for="cpf">URL</label>
                                 <input type="text" class="form-control validar-url" id="url" msn_validacao="Preencha uma url válida." />
                             </div>
                             
@@ -209,6 +209,10 @@ and open the template in the editor.
                                 <label for="data">Data</label>
                                 <input type="text" class="form-control data validar-data" id="data" msn_validacao="Preencha a data corretamente." />
                             </div>
+                            <div class="form-group">
+                                <label for="cartao_credito">Cartão de Crédito</label> <span style='color:red;'>NOVO</span>
+                                <input type="text" class="form-control cartao_credito validar-cartao-credito" id="cartao_credito" msn_validacao="Preencha o cartão de crédito corretamente." />
+                            </div>
                         </form>
                     </div>
                     <div class="tab-pane" id="html-validacao">
@@ -224,6 +228,8 @@ and open the template in the editor.
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"validar-cnpj"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cnpj"</span><span style='color:#274796; '> msn_validacao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Preencha o cnpj corretamente."</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                         <p>Validar <b>DATA</b> (class="validar-data") Opcional: msn_validacao="Preencha a data corretamente." </p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"validar-data"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"data"</span><span style='color:#274796; '> msn_validacao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Preencha a data corretamente."</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p>Validar <b>CARTÃO DE CRÉDITO</b> (class="validar-cartao-credito") Opcional: msn_validacao="Preencha o cartão de crédito corretamente." </p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"validar-cartao-credito"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cartao_credito"</span><span style='color:#274796; '> msn_validacao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Preencha o cartão de crédito corretamente."</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                     </div>
                 </div> 
             </div>
@@ -269,7 +275,62 @@ BAIRRO <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font
 CIDADE <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_cidade"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
 UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_uf"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                     </div>
-                </div> 
+                </div>
+                <h4>Pagamento com Cartão de Crédito</h4>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#demo-pag-cartao" data-toggle="tab">DEMO</a></li>
+                    <li><a href="#html-pag-cartao" data-toggle="tab">HTML</a></li>
+                </ul>
+                <div class="tab-content" style="padding: 10px;">
+                    <div class="tab-pane active" id="demo-pag-cartao">
+                        <form>
+                            <div class="pagamento_cartao_credito">
+                                <div class="form-group">
+                                    <label for="numero_cartao">Número do Cartão</label>
+                                    <input type="text" class="form-control cc_numero" id="numero_cartao" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="nome_titular">Nome do Titular</label>
+                                    <input type="text" class="form-control cc_titular" id="nome_titular" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="data_vencimento">Vencimento do Cartão</label>
+                                    <input type="text" class="form-control cc_vencimento" id="data_vencimento" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="moeda">Código de Segurança</label>
+                                    <input type="text" class="form-control cc_cod_seguranca" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="moeda">Parcela</label>
+                                    <select class="form-control cc_parcela" valor_total="200.00" total_parcelas="12" desconto_avista="5" tipo_desconto="porcentagem" juros="2.2" val="3" parcelas_juros="11,12"></select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="html-pag-cartao">
+                        <p><b>CAMPO NÚMERO DO CARTÃO</b> (class="cc_numero")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-control cc_numero"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"numero_cartao"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p><b>CAMPO NOME DO TITULAR</b> (class="cc_titular") </p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-control cc_titular"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"nome_titular"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p><b>CAMPO VENCIMENTO DO CARTÃO</b> (class="cc_vencimento")</p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-control cc_vencimento"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"data_vencimento"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p><b>CAMPO CÓDIGO DE SEGURANÇA</b> (class="cc_cod_seguranca") </p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-control cc_cod_seguranca"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <p><b>CAMPO PARCELA</b><br> 
+                        <b>Atributos Obrigatórios</b><br> 
+                        class="cc_parcela"<br> 
+                        valor_total="200.00" (decimal)<br> 
+                        total_parcelas="12"<br> 
+                        <b>Atributos Opcionais</b><br> 
+                        desconto_avista="5"<br> 
+                        tipo_desconto="porcentagem" (opção:'porcentagem' (padrão) ou 'moeda')<br> 
+                        juros="2.2" (porcentagem)<br> 
+                        val="3" (valor selecionado)<br> 
+                        parcelas_juros="11,12" </p>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>select</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-control cc_parcela"</span><span style='color:#274796; '> valor_total</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"200.00"</span><span style='color:#274796; '> total_parcelas</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"12"</span><span style='color:#274796; '> desconto_avista</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"5"</span><span style='color:#274796; '> tipo_desconto</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"porcentagem"</span><span style='color:#274796; '> juros</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"2.2"</span><span style='color:#274796; '> val</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"3"</span><span style='color:#274796; '> parcelas_juros</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"11,12"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>select</span><span style='color:#a65700; '>></span></pre>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <b>Ajude a tomar um cafezinho e continuar melhorando o plugin com novos recursos.</b><br><br>
@@ -283,9 +344,17 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
             <hr />
             <div class="row">
                 <h4>Versões</h4>
-                <b>Versão 0.2 - 20/12/2013</b>
+                <b>Versão 0.13 - 09/05/2014</b>
                 <ol>
-                    <li>Melhoria e correção na validação de data.</li>
+                    <li>Otimização do código do plugin</li>
+                    <li>Correção do campo data quando carregava o plugin novamente em ajax por exemplo (crédito ao <a href="https://twitter.com/brunoviana" target="_blank">@brunoviana</a>)</li>
+                    <li>Correção da mesma classe de formatação em vários input que estava colocando o value da primeira classe.</li>
+                    <li>Validação do cartão de crédito. <b style="color: green;">NOVO</b></li>
+                    <li>Formulário de Pagamento com Cartão de Crédito <b style="color: green;">NOVO</b></li>
+                </ol>    
+                <b>Versão 0.9 - 20/12/2013</b>
+                <ol>
+                    <li>Melhoria e correção na validação de data. (crédito ao <a href="https://twitter.com/andreyagra" target="_blank">@andreyagra</a>)</li>
                     <li>Validação de e-mail. <b style="color: green;">NOVO</b></li>
                     <li>Validação de url. <b style="color: green;">NOVO</b></li>
                     <li>Otimização do plugin para ficar mais leve.</li>
@@ -301,7 +370,7 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
             </div>    
             <hr />
             <footer>
-                <p>&copy; Formzin 2013. Por <a href="http://twitter.com/brunobrasilweb" target="_blank">@brunobrasilweb</a></p>
+                <p>&copy; Formzin 2013-2014. Por <a href="http://twitter.com/brunobrasilweb" target="_blank">@brunobrasilweb</a></p>
             </footer>
         </div> <!-- /container -->
     </body>

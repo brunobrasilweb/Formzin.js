@@ -1,8 +1,8 @@
 /* ========================================================================
- * Formzin: formzin.js v0.13
+ * Formzin: formzin.js v0.3
  * http://brunobrasilweb.github.io/Formzin.js
  * ========================================================================
- * Copyright (c) 2013-2014 @brunobrasilweb.
+ * Copyright (c) 2013 @brunobrasilweb.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,85 +19,58 @@
 var Formzin = {
     iniciar: function() {
         jQuery(document).ready(function() {
-            var formatos = [
-                {".cpf": "000.000.000-00"}
-                , {".cnpj": "00.000.000/0000-00"}
-                , {".cep": "00000-000"}
-                , {".telefone": "(00) 0000-00000"}
-                , {".cartao_credito": "0000 0000 0000 0000"}
-                , {".inteiro": "inteiro"}
-                , {".mascara": "mascara"}
-                , {".caixa_alta": "caixa_alta"}
-                , {".data": "data"}
-                , {".placa_carro": "SSS 0000"}
-                , {".codigo_rastreio": "SS000000000SS"}
-                , {".cc_titular": "caixa_alta"}
-                , {".cc_numero": "0000 0000 0000 0000"}
-                , {".cc_vencimento": "00/00"}
-                , {".cc_cod_seguranca": "inteiro"}
-            ];
-
-            jQuery.each(formatos, function() {
-                jQuery.each(this, function(index, value) {
-                    Formzin.iniciarFormato(jQuery(index), value);
-                });
-            });
-
+            Formzin.formatar(jQuery('.cpf'), "000.000.000-00");
+            Formzin.formatar(jQuery('.cnpj'), "00.000.000/0000-00");
+            Formzin.formatar(jQuery('.cep'), "00000-000");
+            Formzin.formatar(jQuery('.telefone'), "(00) 0000-00000");
+            Formzin.formatar(jQuery('.cartao_credito'), "0000 0000 0000 0000");
+            Formzin.formatar(jQuery('.inteiro'), "inteiro");
+            Formzin.formatar(jQuery('.mascara'), "mascara");
+            Formzin.formatar(jQuery('.caixa_alta'), "caixa_alta");
+            Formzin.formatar(jQuery('.data'), "data");
+            Formzin.formatar(jQuery('.placa_carro'), "SSS 0000");
+            Formzin.formatar(jQuery('.codigo_rastreio'), "SS000000000SS");
             Formzin.fMoeda();
-            Formzin.vCampo();
 
+            Formzin.vCampo();
             Formzin.validar(jQuery('.validar-email'), Formzin.validarEmail, 'Por favor preenchar um e-mail v&aacute;lido.');
             Formzin.validar(jQuery('.validar-url'), Formzin.validarUrl, 'Por favor preenchar uma url v&aacute;lida.');
             Formzin.validar(jQuery('.validar-cpf'), Formzin.validarCpf, 'Por favor preenchar o CPF corretamente.');
             Formzin.validar(jQuery('.validar-cnpj'), Formzin.validarCnpj, 'Por favor preenchar o CNPJ corretamente.');
             Formzin.validar(jQuery('.validar-data'), Formzin.validarData, 'Por favor preenchar a data corretamente.');
-            Formzin.validar(jQuery('.validar-cartao-credito'), Formzin.validarCartaoCredito, 'Por favor preenchar o cart&atilde;o cr&eacute;dito corretamente.');
 
             Formzin.mBuscarEndereco();
             Formzin.mPagamentoCartaoCredito();
         });
     },
-    iniciarFormato: function(e, f) {
-        jQuery(e).each(function() {
-            Formzin.formatar(jQuery(this), f);
+    formatar: function(obj, formato) {
+        //obj.val(Formzin.formatarCampo(obj, formato));
+
+        if (formato == "caixa_alta")
+            jQuery('.caixa_alta').attr("style", "text-transform: uppercase;");
+
+        obj.bind('keyup', function() {
+            var v = jQuery(this).val();
+
+            if (formato == "inteiro") {
+                v = v.replace(/\D/g, "");
+            } else if (formato == "mascara") {
+                v = Formzin.formatarCampo(jQuery(this), jQuery(this).attr("formato"));
+            } else if (formato == "caixa_alta") {
+                v = v.toUpperCase();
+            } else if (formato == "data") {
+                var separador = jQuery(this).attr('separador');
+
+                if (!separador)
+                    separador = "/";
+
+                v = Formzin.formatarCampo(jQuery(this), "00" + separador + "00" + separador + "0000");
+            } else {
+                v = Formzin.formatarCampo(jQuery(this), formato);
+            }
+
+            jQuery(this).val(v);
         });
-    },
-    _formatar: function(e, t) {
-        var o = e;
-
-        if (!e.length) {
-            return;
-        }
-
-        if (t == "inteiro") {
-            e = e.val().replace(/\D/g, "");
-        } else if (t == "mascara") {
-            e = Formzin.formatarCampo(o, o.attr("formato"));
-        } else if (t == "caixa_alta") {
-            e = e.val().toUpperCase();
-        } else if (t == "data") {
-            var n = o.attr("separador");
-            if (!n)
-                n = "/";
-            e = Formzin.formatarCampo(o, "00" + n + "00" + n + "0000");
-        } else {
-            e = Formzin.formatarCampo(o, t);
-        }
-
-        o.val(e)
-    },
-    formatar: function(e, t) {
-        //e.val(Formzin.formatarCampo(e, t));
-        this._formatar(e, t);
-
-        if (t == "caixa_alta")
-            jQuery(".caixa_alta").attr("style", "text-transform: uppercase;");
-
-        e.bind("keyup", function(a, b) {
-            return function() {
-                this._formatar(a, b);
-            }.bind(this);
-        }.bind(this)(e, t))
     },
     fMoeda: function() {
         var moeda = jQuery(".moeda");
@@ -206,59 +179,12 @@ var Formzin = {
         });
     },
     mPagamentoCartaoCredito: function() {
-        jQuery(".cc_numero")
-                .attr("style", "padding-left: 35px; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAAAsCAYAAAApSpU1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUFFQzJFN0Y4NTM3MTFFM0ExMjdDRDcwQkQ5NzQ5RTEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUFFQzJFN0U4NTM3MTFFM0ExMjdDRDcwQkQ5NzQ5RTEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkJFMzM3RTMwRDI3NzExRTE5MDg1QUFDNzhCNTREMzEwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM2RTQ0NjlBRDI3NzExRTE5MDg1QUFDNzhCNTREMzEwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+t5dkQQAABLNJREFUeNrsm8lPK0cQxtuOQcHsiwWITTCsAiQgIEAgBBfEiUP+0JwQN6Toif0AHECAAbGvZgcbCYid+TW0NWOP7UlCFL28/qTG45npqeqvvqoaj41nd3dXmMgzx+/m6DGHR2jEzLFijlHDMJ59nzu/+f3+7tzcXE3PBzzhcPiXSCTyDeF4TCWhnD8CgYBWUAJCoRCK+gklMTyxWEyz4qAo+PGaf7wejxaRI0MfvHi9ulBn5sqrOcgMTZIL+OI3BrpwayVpkjRJmiRNkiZJ3wJo/K+UdH19Ld7e3uRg+19V0veIxcVFcXx8LLfz8vJEcXGxKCsr+2/TLRKJiJeXF7ldWlrqeA4RfXx8FDk5OcLv96ecr1BQUCCysrLSnmMF5zIHFBYWisbGRnF/fy/t1tbWplzHzc2NfHXy60uURLQ2NjbE8/NzfB+RGxkZSTJ4dHQkVldXRXV1tRgYGEg6tr6+7mijpaVFdHZ2pj0HVFRUiOHhYbnd2toq1XRyciK6u7sdF39xcSGWl5fF6+urzff29nZRU1PzNSRB0NLSklw0FyZ6oVBIErGyshJ3WGFnZ0dkZ2dLx1GFk+NjY2M25TBne3tbFBUVSTUEAgF5DIVgBwI4ppRknYsd7HENwzCSCJqdnZXHCUJdXZ14eHiQ57Im4IaotOmGhLkYzPf09MQdzM/Pl8eI+Pn5uYyukjRqY1Esji8ZUEciSkpKbNuk7vT0tLi6upLBICWsPhEY6xy1H9UBgoc9qy9gbW1N+jwxMWHzvby8XJLH2rCt7P2t7kYkQFNTky2CKj0mJydtTh0eHsrziA6L3d/fdyVnFgeUgtzi4OBALrihoUHaxb4CdZGA1dfXJ/nOe2qZ6o6ulERknJQUDofjxdXpuM/ni+9HWUgfcthfWVkp3xNtJWl1LlG0qvX29laqlQVb7ahtJ/+Uatva2uQxFRSUizJUDaLbOfmu1MMaUxV7tT+tkv5KF0B1LJg5LEDNVSnhBMhhkC7j4+NJEU8HdV3mYI+UzGQvsat+SXdThil2iS0fQii2KIZje3t7cj9d0IrLy0vZ0q15PzQ0FL/G3NycnMN13DrOPJXK8/PztmOkHKVA+Us6WUtC4i2BGyGkLdwUOZXryNka6a2tLdklMAIBKILa1dHRYasLMzMzYnNzUxbzRFukJfs5h1Y+Ojpqs5Eq3VStHBwctBEAcRRrOjL+VlVVyX3Nzc1JKlVBhcxM94gZP5b09vaKu7s7GXGcIwJ0NQjCMM4og4ktGGVQa05PT2X0U8medKO+oEw3oGty3USFqPcq5biPAlNTU7L74XswGJTvUXhfX1/GzubqPgnDXV1dMkILCwu2G7L+/n5JFF2GjwROBukizMWpVCDSZ2dnkniVvqmAOgkaqnUqxqiHoJDiBIAbXoKKjwzlO2siwG7A19w/m68vpFamOoCDiR8Nvhco/1V5cIOnpyfJvWuSfkQokvRDN/1kUj+Z1ErSJOl000rSJGlokv5RTYp9lKSY/llgMiQ3KClqjuD7+7umxIJPPngsEVW/424zx298IPd6vT+8oqLRKAoKmuNXc2x6Pv9tgidSVeYo03Xqgydz8A3BqWEYb38KMAAfdI6dhxQApgAAAABJRU5ErkJggg==) no-repeat 5px center; background-size: 25px 15px;");
+        jQuery(".cc_numero").attr("style", "padding-left: 35px; background:url('images/cartoes/cartao.png') no-repeat 5px center; background-size: 25px 15px;");
         jQuery(".cc_numero").attr("placeholder", "NÚMERO DO CARTÃO");
-        jQuery(".cc_titular").attr({
-            "placeholder": "TITULAR DO CARTÃO"
-            , "style": "text-transform: uppercase;"
-        });
+        jQuery(".cc_titular").attr("placeholder", "TITULAR DO CARTÃO");
         jQuery(".cc_vencimento").attr("placeholder", "MM/AA");
-        jQuery(".cc_cod_seguranca").attr({
-            "style": "padding-left: 35px; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAAAsCAYAAAApSpU1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCRTMzN0UzMEQyNzcxMUUxOTA4NUFBQzc4QjU0RDMxMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDNkU0NDY5QUQyNzcxMUUxOTA4NUFBQzc4QjU0RDMxMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkJFMzM3RTJFRDI3NzExRTE5MDg1QUFDNzhCNTREMzEwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkJFMzM3RTJGRDI3NzExRTE5MDg1QUFDNzhCNTREMzEwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+c/edDQAAA2JJREFUeNrsms1OGlEUx8/MgFJFCQ2yqYnGxMboSon7LnSDuzYsfAFrfQGfwSdowyuYdIcbXRCXfnSnsZIYTewGSQmCVgVmev+3HjoQsQN1xZx/QuZ+D/d3zz1zLozhOA5dX1+Hq9Vq9ubmZs62bYN8LtM0ncHBwW/BYPDd8PBwJYDC+/v7XQVoVlWQYfieESnDMcrlckLx2FXZORAxLi4u6v39/YayJhL9kbIiGI8zNjZmmSofeHh4MJSJCZnmLUe1Wg1GFAAZodN+22le8EldOaHz83N9HRkZodvbW8rn8wSfpnwbjY+P09XVla7jMuQhrucxUM/l8Xhc90E5X9GWr7jPwMBAI48xcT06OqKZmRk9DqfdY6MP+vL37RCSEWgp8KRsNkvz8/N0fHysJ8fAlpaWKJPJ6DwmjC+MSaAdhD6o4/ao29/f15OAGCQmgr4YD/VYALTd29vT9cqHagBo414w3JPTW1tblEwm9b15fPRbW1vzDIgfYl1ttdbV5hVziy2rVYVCQZfzarOw0mwdPGFAwCKwuN/09PSTY6It0hgHbdzWjI9ywt1sN73VQrlc7peKB0g5cHFEj+rr60P8SJOTk6/Mbrabj5x299vNd+GAWNK/LUk/3ZaXl2l0dJQuLy+FzqPcPDQkeP1YLEYSdTc/wS3LooODg7/brV6vCxmX3DwEkkB6YUjqxCtkXHLzaECybVvIuOTmIZA6gSTBZPtgsnHADYVCQqZFd3d3zQdckYezm8gDJPkrqVluHmJJHhTw0qhSqfQsgHA47B0SzOu5MGBqaqrnAJ2cnMh2e/Ht1iuO++zsjDY3N3U6kUjQ4eEhRaNRmpiY0GmULSws+NtxAwhULBY1GEBDGQBBKPN9CAAgsCSGtbOz00ijnGH5PgTAT64AAqtBemNjg9bX12l7e5vS6bRYEixlcXFR+x4AQTqVSmlQnO7UkhoH3KGhIWr3fhLipF4NAdrFSXg/qVwuNx9w5VjS3pICnVCXY8l/hu69bE2y3Z4BxMc0OZZ4tCRHZeQH7qfiI9MEFweQbJucU/m3pFngUbPr35GE466trnx8/zn95evrSPQtdfmiaY/J+Vkqnn5aWf0APsbjC5RBlXkTiURiKm+Coh/fMOHdZFmWXSqVCir5Q/Go/hZgAIS/w3X4SEpcAAAAAElFTkSuQmCC) no-repeat 5px center; background-size: 25px 15px;"
-            , "maxlength": 4
-        });
+        jQuery(".cc_cod_seguranca").attr("style", "padding-left: 35px; background:url('images/cartoes/verso.png') no-repeat 5px center; background-size: 25px 15px;");
         jQuery(".cc_cod_seguranca").attr("placeholder", "CVV");
-        jQuery(".cc_parcela").html(this.montarParcelas());
-    },
-    montarParcelas: function() {
-        var valorTotal = parseFloat(jQuery(".cc_parcela").attr('valor_total'));
-        var totalParcelas = parseInt(jQuery(".cc_parcela").attr('total_parcelas'));
-        var descontoAvista = parseFloat(jQuery(".cc_parcela").attr('desconto_avista'));
-        var tipoDesconto = jQuery(".cc_parcela").attr('tipo_desconto');
-        var juros = parseFloat(jQuery(".cc_parcela").attr('juros'));
-        var parcelasJuros = jQuery(".cc_parcela").attr('parcelas_juros');
-        if (parcelasJuros)
-            parcelasJuros = parcelasJuros.split(',');
-        
-        var val = jQuery(".cc_parcela").attr('val');
-        var option = '<option value="">Selecione a Parcela</option>';
-
-        for (var p = 1; p <= totalParcelas; p++) {
-            valorParcela = valorTotal / p;
-            msnParcela = '';
-
-            if (descontoAvista && p == 1) {
-                if (tipoDesconto && tipoDesconto == 'moeda') {
-                    valorParcela = (valorTotal - descontoAvista) / p;
-                    msnParcela = 'com (R$ ' + this.formatarReal(descontoAvista) + ' de desconto)';
-                } else {
-                    valorParcela = ((valorTotal - (valorTotal * descontoAvista) / 100)) / p;
-                    msnParcela = 'com (' + descontoAvista + '% de desconto)';
-                }
-            } else {
-                if (juros && parcelasJuros && parcelasJuros.indexOf(String(p)) != -1) {
-                    valorParcela = ((valorTotal + (valorTotal * juros) / 100)) / p;
-                    msnParcela = 'com juros';
-                }
-            }
-
-            valorParcela = this.formatarReal(valorParcela);
-
-            option += '<option ' + ((val && val == p) ? 'selected' : '') + ' value="' + p + '">' + p + 'x de R$ ' + valorParcela + ' ' + msnParcela + '</option>';
-        }
-
-        return option;
     },
     msnValidacao: function(obj, valido, msn) {
         var id = obj.attr('id');
@@ -464,36 +390,6 @@ var Formzin = {
                 return false;
         }
         return true;
-    },
-    validarCartaoCredito: function(s) {
-        var v = "0123456789";
-        var w = "";
-        for (i = 0; i < s.length; i++) {
-            x = s.charAt(i);
-            if (v.indexOf(x, 0) != -1)
-                w += x;
-        }
-
-        j = w.length / 2;
-        k = Math.floor(j);
-        m = Math.ceil(j) - k;
-        c = 0;
-        for (i = 0; i < k; i++) {
-            a = w.charAt(i * 2 + m) * 2;
-            c += a > 9 ? Math.floor(a / 10 + a % 10) : a;
-        }
-        for (i = 0; i < k + m; i++)
-            c += w.charAt(i * 2 + 1 - m) * 1;
-        return (c % 10 == 0);
-    },
-    formatarReal: function(mixed) {
-        var int = parseInt(mixed.toFixed(2).toString().replace(/[^\d]+/g, ''));
-        var tmp = int + '';
-        tmp = tmp.replace(/([0-9]{2})$/g, ",$1");
-        if (tmp.length > 6)
-            tmp = tmp.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
-
-        return tmp;
     }
 };
 
