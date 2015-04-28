@@ -1,13 +1,74 @@
 <html>
-<head>
-<script src="js/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-$.getJSON("http://cep.republicavirtual.com.br/web_cep.php?cep=91010000&formato=json",
-function(data) {
-    alert(data.bairro); 
-});
-</script>
-</head>
-<body>
-    teste
+    <head>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/jquery.mask.js"></script>
+    </head>
+    <body>
+        <form id="form1">
+            <input type="text" value="83252667673"  class="cpf" id="cpf" />
+            <input type="text" value="83252667673" class="cpf_real" id="cpf_real" />
+            <script>
+                $(document).ready(function() {
+                    $('.cpf').mask('000.000.000-AA');
+                    $('.cpf_real').bind('focus keyup', function() {
+                        $(this).val(mascara($(this).val(), '000.000.000-00'));
+                    });
+                    $('.cpf_real').val(mascara($(this).val(), '000.000.000-00'));
+                });
+
+
+                function mascara(val, formato, skipMaskChars) {
+                    
+                    var trans = {
+                        '0': {pattern: /\d/},
+                        'A': {pattern: /[a-zA-Z0-9]/},
+                        'S': {pattern: /[a-zA-Z]/}
+                    };
+
+                    var buf = [],
+                            value = val,
+                            m = 0, maskLen = formato.length,
+                            v = 0, valLen = value.length,
+                            offset = 1, addMethod = "push",
+                            resetPos = -1,
+                            lastMaskChar,
+                            check;
+
+                    lastMaskChar = maskLen - 1;
+                    check = function() {
+                        return m < maskLen && v < valLen;
+                    };
+
+                    while (check()) {
+
+                        var maskDigit = formato.charAt(m),
+                                valDigit = value.charAt(v),
+                                translation = trans[maskDigit];
+
+                        if (translation) {
+                            if (valDigit.match(translation.pattern)) {
+                                buf[addMethod](valDigit);
+                                m += offset;
+                            } else if (translation.optional) {
+                                m += offset;
+                                v -= offset;
+                            }
+                            v += offset;
+                        } else {
+                            if (skipMaskChars === undefined) {
+                                buf[addMethod](maskDigit);
+                            }
+
+                            if (valDigit === maskDigit) {
+                                v += offset;
+                            }
+
+                            m += offset;
+                        }
+                    }
+
+                    return buf.join("");
+                }
+            </script>
+        </form>
 </html>
