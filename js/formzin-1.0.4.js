@@ -226,25 +226,32 @@ var Formzin = new function () {
     this.mBuscarEndereco = function () {
         jQuery(".buscar_endereco").change(function () {
             var cep = jQuery(this);
-            jQuery.getJSON("http://cep.republicavirtual.com.br/web_cep.php?cep=" + cep.val() + "&formato=json",
+            jQuery.getJSON("https://viacep.com.br/ws/" + cep.val() + "/json/",
             function (data) {
-                if (data.resultado === "1") {
+                if (data.logradouro) {
                     jQuery("." + cep.attr("data-prefixo") + "bairro").val(data.bairro);
-                    jQuery("." + cep.attr("data-prefixo") + "cidade").val(data.cidade);
-                    jQuery("." + cep.attr("data-prefixo") + "logradouro").val(data.tipo_logradouro + ' ' + data.logradouro);
+                    jQuery("." + cep.attr("data-prefixo") + "cidade").val(data.localidade);
+                    jQuery("." + cep.attr("data-prefixo") + "logradouro").val(data.logradouro);
                     jQuery("." + cep.attr("data-prefixo") + "uf").val(data.uf);
+                    jQuery("." + cep.attr("data-prefixo") + "ibge").val(data.ibge);
 
                     if (cep.attr("data-readonly")) {
                         jQuery("." + cep.attr("data-prefixo") + "bairro").attr("readonly", true);
                         jQuery("." + cep.attr("data-prefixo") + "cidade").attr("readonly", true);
                         jQuery("." + cep.attr("data-prefixo") + "logradouro").attr("readonly", true);
                         jQuery("." + cep.attr("data-prefixo") + "uf").attr("readonly", true);
+                        jQuery("." + cep.attr("data-prefixo") + "ibge").attr("readonly", true);
                     } else {
                         jQuery("." + cep.attr("data-prefixo") + "bairro").attr("readonly", false);
                         jQuery("." + cep.attr("data-prefixo") + "cidade").attr("readonly", false);
                         jQuery("." + cep.attr("data-prefixo") + "logradouro").attr("readonly", false);
-                        jQuery("." + cep.attr("data-prefixo") + "uf").attr("readonly", false);
+                        jQuery("." + cep.attr("data-prefixo") + "ibge").attr("readonly", false);
                     }
+                } else {
+                    jQuery("." + cep.attr("data-prefixo") + "bairro").attr("readonly", false);
+                    jQuery("." + cep.attr("data-prefixo") + "cidade").attr("readonly", false);
+                    jQuery("." + cep.attr("data-prefixo") + "logradouro").attr("readonly", false);
+                    jQuery("." + cep.attr("data-prefixo") + "uf").attr("readonly", false);
                 }
             });
         });
