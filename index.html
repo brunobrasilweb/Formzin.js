@@ -10,7 +10,7 @@ and open the template in the editor.
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/formzin-1.0.3.js" type="text/javascript"></script>
+        <script src="js/formzin-1.0.4.js" type="text/javascript"></script>
         <meta name="description" content="Esqueça Maskinput, Priceformat e entre outros plugins e conheça o Formzin.js o plugin que formata, valida e manipula formulários sem precisar digitar um linha de código javascript." />
         <meta name="keywords" content="Plugin jQuery, jquery, mascara jquery, formatar preço jquery, validação em jquery" />
         <script>
@@ -28,7 +28,6 @@ and open the template in the editor.
 
             ga('create', 'UA-46572012-1', 'brunobrasilweb.github.io');
             ga('send', 'pageview');
-
         </script>
     </head>
     <body>
@@ -36,8 +35,8 @@ and open the template in the editor.
             <div class="container">
                 <h1>Formzin</h1>
                 <p>Plugin do Jquery para facilitar o tratamento de formulários.</p>
-                <p><a class="btn btn-primary btn-lg" href="js/formzin-1.0.3.js" target="_blank" role="button">Baixar o Plugin Versão 1.0.3</a></p>
-                <p><a class="btn btn-primary btn-lg" href="js/formzin-1.0.3.min.js" target="_blank" role="button">Baixar o Plugin Versão 1.0.3 (min)</a></p>
+                <p><a class="btn btn-primary btn-lg" href="js/formzin-1.0.4.js" target="_blank" role="button">Baixar o Plugin Versão 1.0.4</a></p>
+                <p><a class="btn btn-primary btn-lg" href="js/formzin-1.0.4.min.js" target="_blank" role="button">Baixar o Plugin Versão 1.0.4 (min)</a></p>
                 <div style="width: 100%; height: 30px;">
                     <span style="padding: 5px;" class='st_facebook_hcount' displayText='Facebook'></span>
                     <span class='st_twitter_hcount' displayText='Tweet'></span>
@@ -49,7 +48,6 @@ and open the template in the editor.
                 <script type="text/javascript">stLight.options({publisher: "ur-6fa0980c-b987-7964-5568-51f8fc577437", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -73,7 +71,7 @@ and open the template in the editor.
 <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script src="formzin.min.js" type="text/javascript"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></pre>
                 <p>Para chamar o plugin em lightbox, dialog, ajax e etc:</p>
                 <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script type="text/javascript"</span><span style='color:#a65700; '>></span>
-    Formzin<span style='color:#808030; '>.</span>iniciar<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>                    
+    Formzin<span style='color:#808030; '>.</span>iniciar<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
 <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></pre>
             </div>
             <div class="row">
@@ -113,7 +111,7 @@ and open the template in the editor.
                                 <label for="moeda">Moeda (Dolar com decimal 4)</label>
                                 <input type="text" class="form-control moeda" data-prefixo="$ " data-decimal="." data-limite_decimal="4" data-milhar="," id="moeda" />
                             </div>
-                            <div class="form-group"> 
+                            <div class="form-group">
                                 <label for="caixa_alta">CAIXA ALTA</label>
                                 <input type="text" class="form-control caixa_alta" id="caixa_alta" />
                             </div>
@@ -169,7 +167,7 @@ and open the template in the editor.
                         <p>Formatar <b>CÓDIGO RASTREIO CORREIOS</b> (class="codio_rastreio")</p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"codigo_rastreio"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                     </div>
-                </div> 
+                </div>
             </div>
             <div class="row">
                 <h1>Validação</h1>
@@ -190,12 +188,12 @@ and open the template in the editor.
                                 <label for="cpf">E-mail</label>
                                 <input type="text" class="form-control validar-email" id="email" data-msn_validacao="Preencha um e-mail válido." />
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="cpf">URL</label>
                                 <input type="text" class="form-control validar-url" id="url" data-msn_validacao="Preencha uma url válida." />
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="cpf">CPF</label>
                                 <input type="text" class="form-control cpf validar-cpf" id="cpf" data-msn_validacao="Preencha o cpf corretamente." />
@@ -231,11 +229,10 @@ and open the template in the editor.
                         <p>Validar <b>CARTÃO DE CRÉDITO</b> (class="validar-cartao-credito") Opcional: data-msn_validacao="Preencha o cartão de crédito corretamente." </p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"validar-cartao-credito"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cartao_credito"</span><span style='color:#274796; '> data-msn_validacao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Preencha o cartão de crédito corretamente."</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                     </div>
-                </div> 
+                </div>
             </div>
             <div class="row">
                 <h1>Manipulação</h1>
-
                 <h4>Busca de endereço com CEP</h4>
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#demo-busca-cep" data-toggle="tab">DEMO</a></li>
@@ -246,7 +243,7 @@ and open the template in the editor.
                         <form>
                             <div class="form-group">
                                 <label for="cep">CEP</label>
-                                <input type="text" data-prefixo="en_" class="form-control buscar_endereco cep" id="cep" />
+                                <input type="text" data-prefixo="en_" data-readonly="true" class="form-control buscar_endereco cep" id="cep" />
                             </div>
                             <div class="form-group">
                                 <label for="inteiro">Endereço</label>
@@ -269,7 +266,7 @@ and open the template in the editor.
                     <div class="tab-pane" id="html-busca-cep">
                         <p>Formatar <b>CEP</b> (class="buscar_endereco")</p>
                         Os atributo (data-prefixo) para colocar o prefixo do campo, para ser usado com diversos endereço. Ex: endereço de entrega e cobrança em Loja Virtual
-                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> data-prefixo</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"buscar_endereco"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
+                        <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>data</span><span style='color:#274796; '>-prefixo</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_"</span><span style='color:#274796; '> </span><span style='color:#074726; '>data</span><span style='color:#274796; '>-</span><span style='color:#074726; '>readonly</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"true"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-control buscar_endereco cep"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cep"</span><span style='color:#a65700; '>></span></pre>
                         <pre>ENDEREÇO <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_logradouro"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
 BAIRRO <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_bairro"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
 CIDADE <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"en_cidade"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
@@ -317,16 +314,16 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-control cc_vencimento"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"data_vencimento"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
                         <p><b>CAMPO CÓDIGO DE SEGURANÇA</b> (class="cc_cod_seguranca") </p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-control cc_cod_seguranca"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
-                        <p><b>CAMPO PARCELA</b><br> 
-                        <b>Atributos Obrigatórios</b><br> 
-                        class="cc_parcela"<br> 
-                        data-valor_total="200.00" (data-decimal)<br> 
-                        data-total_parcelas="12"<br> 
-                        <b>Atributos Opcionais</b><br> 
-                        data-desconto_avista="5"<br> 
-                        data-tipo_desconto="porcentagem" (opção:'porcentagem' (padrão) ou 'moeda')<br> 
-                        data-juros="2.2" (porcentagem)<br> 
-                        data-val="3" (valor selecionado)<br> 
+                        <p><b>CAMPO PARCELA</b><br>
+                        <b>Atributos Obrigatórios</b><br>
+                        class="cc_parcela"<br>
+                        data-valor_total="200.00" (data-decimal)<br>
+                        data-total_parcelas="12"<br>
+                        <b>Atributos Opcionais</b><br>
+                        data-desconto_avista="5"<br>
+                        data-tipo_desconto="porcentagem" (opção:'porcentagem' (padrão) ou 'moeda')<br>
+                        data-juros="2.2" (porcentagem)<br>
+                        data-val="3" (valor selecionado)<br>
                         data-parcelas_data-juros="11,12" </p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>select</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-control cc_parcela"</span><span style='color:#274796; '> data-valor_total</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"200.00"</span><span style='color:#274796; '> data-total_parcelas</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"12"</span><span style='color:#274796; '> data-desconto_avista</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"5"</span><span style='color:#274796; '> data-tipo_desconto</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"porcentagem"</span><span style='color:#274796; '> data-juros</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"2.2"</span><span style='color:#274796; '> data-val</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"3"</span><span style='color:#274796; '> data-parcelas_data-juros</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"11,12"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>select</span><span style='color:#a65700; '>></span></pre>
                     </div>
@@ -355,7 +352,7 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
                             <div class="sel div-vermelha" style="background: red; color: #fff; padding: 5px; display: none;">
                                 <h5>VERMELHO</h5>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="tipo-pessoa">Tipo de Pessoa (Mostra somente Pessoa Jurídica)</label><br />
                                 <input type="radio" name="tipo_pessoa" class="selecao" data-classe_selecao="tp-radio" data-selecao="J|radio-dados-empresa" value="F" /> FISICA
@@ -370,9 +367,9 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
                                 <div class="form-group">
                                     <label for="cnpj">CNPJ</label>
                                     <input type="text" class="form-control" id="cnpj" />
-                                </div>                                
+                                </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <input type="checkbox" name="formulario" class="selecao" data-classe_selecao="form" data-selecao="1|formulario" value="1" />
                                 <label for="tipo-pessoa">Mostrar Formulário</label>
@@ -386,7 +383,7 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
                                 <div class="form-group">
                                     <label for="email">E-mail</label>
                                     <input type="text" class="form-control" id="email" />
-                                </div>                                
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -401,15 +398,15 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"sel div-azul"</span><span style='color:#274796; '> </span><span style='color:#074726; '>style</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"</span><span style='color:#bb7977; font-weight:bold; '>background</span><span style='color:#808030; '>:</span><span style='color:#274796; '> </span><span style='color:#797997; '>blue</span><span style='color:#800080; '>;</span><span style='color:#274796; '> </span><span style='color:#bb7977; font-weight:bold; '>color</span><span style='color:#808030; '>:</span><span style='color:#274796; '> </span><span style='color:#008c00; '>#</span><span style='color:#008000; '>fff</span><span style='color:#800080; '>;</span><span style='color:#274796; '> </span><span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span><span style='color:#274796; '> </span><span style='color:#008c00; '>5</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#274796; '> </span><span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#274796; '> </span><span style='color:#074726; '>none</span><span style='color:#800080; '>;</span><span style='color:#0000e6; '>"</span><span style='color:#a65700; '>></span>
   <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>h5</span><span style='color:#a65700; '>></span>AZUL<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>h5</span><span style='color:#a65700; '>></span>
 <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
-                        
+
 <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"sel div-vermelha"</span><span style='color:#274796; '> </span><span style='color:#074726; '>style</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"</span><span style='color:#bb7977; font-weight:bold; '>background</span><span style='color:#808030; '>:</span><span style='color:#274796; '> </span><span style='color:#797997; '>red</span><span style='color:#800080; '>;</span><span style='color:#274796; '> </span><span style='color:#bb7977; font-weight:bold; '>color</span><span style='color:#808030; '>:</span><span style='color:#274796; '> </span><span style='color:#008c00; '>#</span><span style='color:#008000; '>fff</span><span style='color:#800080; '>;</span><span style='color:#274796; '> </span><span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span><span style='color:#274796; '> </span><span style='color:#008c00; '>5</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#274796; '> </span><span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#274796; '> </span><span style='color:#074726; '>none</span><span style='color:#800080; '>;</span><span style='color:#0000e6; '>"</span><span style='color:#a65700; '>></span>
    <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>h5</span><span style='color:#a65700; '>></span>VERMELHO<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>h5</span><span style='color:#a65700; '>></span>
 <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span></pre>
                         <p>Atributos:</p>
                         <b>data-classe_selecao="sel"</b> Colocar a classe para todas as divs da seleção.<br />
-                        <b>data-selecao="1|div-azul,2|div-vermelha"</b> Atributo seleção para colocar value|class_para_mostrar. Podendo colocar mais de uma opção separado por virgula.<br />                        
+                        <b>data-selecao="1|div-azul,2|div-vermelha"</b> Atributo seleção para colocar value|class_para_mostrar. Podendo colocar mais de uma opção separado por virgula.<br />
                     </div>
-                    
+
                     <div class="tab-pane" id="html-selecao-radio">
                         <p><b>CAMPO RADIO</b> (class="selecao")</p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"radio"</span><span style='color:#274796; '> </span><span style='color:#074726; '>name</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"tipo_pessoa"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"selecao"</span><span style='color:#274796; '> data-classe_selecao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"tp-radio"</span><span style='color:#274796; '> data-selecao</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"J|radio-dados-empresa"</span><span style='color:#274796; '> </span><span style='color:#074726; '>value</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"F"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span> FISICA
@@ -424,9 +421,9 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
    <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-group"</span><span style='color:#a65700; '>></span>
       <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>label</span><span style='color:#274796; '> </span><span style='color:#074726; '>for</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cnpj"</span><span style='color:#a65700; '>></span>CNPJ<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>label</span><span style='color:#a65700; '>></span>
       <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-control"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"cnpj"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
-   <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>                                
+   <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
 <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span></pre>
-                        
+
                         <p>Atributos:</p>
                         <b>data-classe_selecao="tp-radio"</b> Colocar a classe para todas as divs da seleção.<br />
                         <b>data-selecao="J|radio-dados-empresa"</b> Atributo seleção para colocar value|class_para_mostrar. Podendo colocar mais de uma opção separado por virgula. <br />
@@ -444,7 +441,7 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
    <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-group"</span><span style='color:#a65700; '>></span>
       <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>label</span><span style='color:#274796; '> </span><span style='color:#074726; '>for</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"email"</span><span style='color:#a65700; '>></span>E-mail<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>label</span><span style='color:#a65700; '>></span>
       <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"form-control"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"email"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>
-   <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>                                
+   <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
 <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span></pre>
 
                         <p>Atributos:</p>
@@ -473,7 +470,7 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
                     <div class="tab-pane" id="html-focus">
                         <p><b>CAMPO INPUT</b> (class="focus")</p>
                         <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"focus"</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span></pre>
-                                               
+
                     </div>
                 </div>
             </div>
@@ -489,22 +486,26 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
             <hr />
             <div class="row">
                 <h4>Versões</h4>
+                <b><a href="js/formzin-1.0.4.min.js" target="_blank">Versão 1.0.4</a> - 04/06/2015</b>
+                <ol>
+                    <li>Bloquear os campos do endereço quando tiver endereço na busca do CEP.</li>
+                </ol>
                 <b><a href="js/formzin-1.0.3.min.js" target="_blank">Versão 1.0.3</a> - 03/06/2015</b>
                 <ol>
                     <li>Correção da validação do CNPJ.</li>
                     <li>Correção dos campos número de cartão e nome do Titular que estava limpando.</li>
-                </ol>    
+                </ol>
                 <b><a href="js/formzin-1.0.2.min.js" target="_blank">Versão 1.0.2</a> - 27/09/2014</b>
                 <ol>
                     <li>Para padronizar Formin.js tive que colocar todos os atributos o prefixo (data-). Assim será aceito por alguns frameworks que exigem essa padronização.</li>
                     <li>Colocar focus no campo. <b style="color: green;">NOVO</b></li>
-                </ol>    
+                </ol>
                 <b><a href="js/formzin-1.0.0.min.js" target="_blank">Versão 1.0.0</a> - 13/06/2014</b>
                 <ol>
                     <li>Mostrar ou Esconder divs (Class) através de campos de Seleções. <b style="color: green;">NOVO</b></li>
                     <li>Melhoria e organização do código.</li>
                     <li>Limpa compo caso não estiver de acordo com o formato</li>
-                </ol>    
+                </ol>
                 <b>Versão 0.13 - 09/05/2014</b>
                 <ol>
                     <li>Otimização do código do plugin</li>
@@ -512,7 +513,7 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
                     <li>Correção da mesma classe de formatação em vários input que estava colocando o value da primeira classe.</li>
                     <li>Validação do cartão de crédito. <b style="color: green;">NOVO</b></li>
                     <li>Formulário de Pagamento com Cartão de Crédito <b style="color: green;">NOVO</b></li>
-                </ol>    
+                </ol>
                 <b>Versão 0.9 - 20/12/2013</b>
                 <ol>
                     <li>Melhoria e correção na validação de data. (crédito ao <a href="https://twitter.com/andreyagra" target="_blank">@andreyagra</a>)</li>
@@ -528,7 +529,7 @@ UF <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-wei
                 <ol>
                     <li>Lançamento do plugin</li>
                 </ol>
-            </div>    
+            </div>
             <hr />
             <footer>
                 <p>&copy; Formzin 2013-2014. Por <a href="http://twitter.com/brunobrasilweb" target="_blank">@brunobrasilweb</a></p>
